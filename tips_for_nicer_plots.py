@@ -1,6 +1,10 @@
 # significantly improves image quality
 %config InlineBackend.figure_format = 'retina'
 
+# fig.tight_layout() is discouraged now. constrained_layout() works better
+# to set it as default run:
+plt.rcParams['figure.constrained_layout.use'] = True
+
 # see styles and change style
 plt.style.available 
 plt.style.use(['seaborn-v0_8-colorblind', 'seaborn-v0_8-darkgrid'])
