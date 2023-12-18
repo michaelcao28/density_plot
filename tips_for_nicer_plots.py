@@ -21,3 +21,16 @@ plt.rcParams['axes.prop_cycle'] = cycler(color=new_color_order)
 
 # change colour cycle only for a particular plot
 ax.set_prop_cycle(cycler(color=new_color_order))
+
+
+# subplots using gridspec. This trick is not in api docs.
+# Trick: treat each grid like the axes just like in plt.subplots()
+fig = plt.figure(figsize=(l,h))
+gs = fig.add_gridspec(
+    nrows=nrows, 
+    ncols=ncols, 
+    figure=fig, 
+    width_ratios=[.6, 1, 1], 
+    height_ratios=[.1] + [1]*(nrows-1)
+)
+axes = gs.subplots() # shape (nrows x ncols)
