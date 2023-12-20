@@ -34,3 +34,5 @@ gs = fig.add_gridspec(
     height_ratios=[.1] + [1]*(nrows-1)
 )
 axes = gs.subplots() # shape (nrows x ncols)
+
+# start on a blank canvas.
